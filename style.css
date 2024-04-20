@@ -37,7 +37,6 @@ textarea:focus {
     background-color: rgba(20, 20, 20, 1)
 }
 
-
 .btn-1 {
     border-bottom-left-radius: 10px;
 }
@@ -48,7 +47,7 @@ textarea:focus {
 
 button {
     padding: .5rem;
-    width: 9rem;
+/*     width: 9rem; */
     background-color: black;
     cursor: pointer;
     border: 1px solid skyblue;
@@ -71,8 +70,8 @@ button:hover {
 
 .btn-color-box {
     background-color: rgba(20, 20, 20, 1) !important;
-    width: 100px;
-    height: 30px;
+    width: 160px;
+    height: 40px;
     border-bottom: 0;
     border-top-left-radius: 10px;
     background-color: black;
@@ -80,16 +79,16 @@ button:hover {
     box-shadow: 0px -4px 10px skyblue inset, 0 0 20px black;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: space-evenly
 }
 
 .btn-color-box__bx {
-    width: 1px;
-    height: 1px;
+    width: 2px;
+    height: 2px;
     margin: 0 4px;
     padding: .3rem;
     cursor: pointer;
-    border-radius: 100px
+    border-radius: 50rem
 }
 
 .btn-color-box__1 {
