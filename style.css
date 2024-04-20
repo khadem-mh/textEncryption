@@ -20,7 +20,7 @@ body {
 }
 
 textarea {
-    padding: 20px 25px 0 25px;
+    padding: 25px 25px 0 25px;
     transition: 1s;
     color: skyblue;
     background-color: black;
@@ -28,7 +28,7 @@ textarea {
     border: 1px solid skyblue;
     border-top: 0;
     /*border-top-left-radius: 10px;*/
-    border-top-right-radius: 10px;
+    border-radius: 0px 1rem 1rem 1rem;
     box-shadow: 0 0 40px skyblue inset, 0 0 20px black;
 }
 
@@ -113,8 +113,10 @@ button:hover {
 }
 
 .parent-capsLockBtn {
+    overflow: hidden;
     width: 100px;
-    height: 30px;
+    height: 40px;
+    padding: 0 1rem;
     border-bottom: 0;
     border-top-right-radius: 10px;
     background-color: black;
@@ -125,16 +127,20 @@ button:hover {
     justify-content: center
 }
 
+input:focus {
+    outline: none;
+}
+
 .capsLockBtn {
     background-color: transparent;
     cursor: default;
-    padding: auto;
-    width: auto;
+    width: inherit;
+    height: inherit;
     border: 0;
     box-shadow: none;
     transition: all .4s;
     color: skyblue;
-    font-size: .7rem;
+    font-size: .8rem;
 }
 
 .capsLockBtn:hover {

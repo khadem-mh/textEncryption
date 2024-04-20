@@ -4,19 +4,19 @@ const btnDecoding = document.querySelector('#btnDecoding')
 let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
 
-textArea.addEventListener('input', (event) => {
+textArea.addEventListener('input', event => {
     if (event.data != null) {
-        char.innerHTML += event.data
+        char.value += event.data
 
     }
     if (event.data == null) {
 
-        char.innerHTML = textArea.value.slice(-1)
+        char.value = textArea.value.slice(-1)
 
     }
     if (event.data == ' ') {
-        char.innerHTML = ''
-        char.innerHTML += event.data
+        char.value = ''
+        char.value += event.data
     }
 })
 
