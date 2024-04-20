@@ -3,16 +3,45 @@ const btnDecoding = document.querySelector('#btnDecoding')
 
 let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
+let textEncryp
+let testq = ''
+let newValue
+let indexMain
 
 textArea.addEventListener('input', event => {
-    if (event.data != null) {
-        char.value += event.data
+    event.data != null && (char.value += event.data)
 
+    newValue = event.target.value
+    if (event.inputType === 'insertText') {
+        testq = newValue
     }
+
+    if (event.inputType === 'deleteContentBackward') {
+        console.log(testq);
+        for (let index = 0; index < testq.length; index++) {
+            
+            if (newValue[index] !== testq[index]) {
+                indexMain = index
+                return true
+            }
+        }
+        console.log('new value => ', newValue);
+    }
+    
+    
     if (event.data == null) {
+    
+        let textWord
+        textWord = textArea.value
 
-        char.value = textArea.value.slice(-1)
-
+        let indexMax
+        for (let i = 0; i < textWord.length; i++) {
+            if (textWord.charAt(i) === ' ') {
+                indexMax = i
+            }
+        }
+        console.log(indexMax, indexMain);
+        char.value = textArea.value.slice(indexMax, indexMain)
     }
     if (event.data == ' ') {
         char.value = ''
@@ -22,7 +51,6 @@ textArea.addEventListener('input', event => {
 
 
 //Box colors
-
 const caseFilterColor = (colorText, colorBack) => {
     document.querySelector('textarea').style.cssText = `
         color: ${colorText};
@@ -47,16 +75,14 @@ const caseFilterColor = (colorText, colorBack) => {
     `
 }
 
-/* const boxColor = (color) => {
+const boxColor = (color) => {
     sessionStorage.removeItem("boxColor");
     sessionStorage.setItem("boxColor", color);
-} */
+}
 
 document.querySelectorAll('.btn-color-box__bx').forEach(box => {
     box.addEventListener('click', event => {
-
         switch (event.target.classList[1]) {
-
             case 'btn-color-box__1': {
                 caseFilterColor('red', 'brown')
                 boxColor('brown')
@@ -83,26 +109,21 @@ document.querySelectorAll('.btn-color-box__bx').forEach(box => {
         }
     })
 })
-/* caseFilterColor(sessionStorage.getItem("boxColor"), sessionStorage.getItem("boxColor")) */
 
+caseFilterColor(sessionStorage.getItem("boxColor"), sessionStorage.getItem("boxColor"))
 
-
-var MyEncode
-function Encode_Text() {
-    var MyText, result;
-    MyText = document.getElementById("UserInput").value;
-    MyEncode = window.btoa(MyText);
-    result = document.getElementById("Result");
-    result.innerHTML = MyEncode;
+const test = (isDecode = false) => {
+    let myDecode, myEncode
+    let result = document.getElementById("Result")
+    if (isDecode) {
+        myEncode = window.btoa(document.getElementById("UserInput").value)
+        textEncryp = myEncode
+        result.innerHTML = myEncode
+    } else {
+        myDecode = window.atob(textEncryp)
+        result.innerHTML = myDecode
+    }
 }
 
-function Decode_Text() {
-    var MyText, MyDecode, result;
-    MyText = MyEncode;
-    MyDecode = window.atob(MyText);
-    result = document.getElementById("Result");
-    result.innerHTML = MyDecode;
-}
-
-btnEncryption.addEventListener('click', Encode_Text)
-btnDecoding.addEventListener('click', Decode_Text)
+btnEncryption.addEventListener('click', () => test(true))
+btnDecoding.addEventListener('click', () => test(false))
