@@ -71,8 +71,8 @@ document.querySelectorAll('.btn-color-box__bx').forEach(box => {
             }
 
             case 'btn-color-box__2':
-                caseFilterColor('blue', 'blue')
-                boxColor('blue')
+                caseFilterColor('rgb(255, 174, 0)', 'rgb(255, 174, 0)')
+                boxColor('rgb(255, 174, 0)')
                 break;
 
             case 'btn-color-box__3':
