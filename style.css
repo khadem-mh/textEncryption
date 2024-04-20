@@ -29,6 +29,7 @@ textarea {
     font-size: 1.1rem;
     border-radius: 0px 1rem 1rem 0rem;
     transition: all 700ms;
+    line-height: 1.8rem;
 }
 
 textarea:focus {
