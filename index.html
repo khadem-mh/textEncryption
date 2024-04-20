@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Data Encryption</title>
 </head>
 
 <body>
-
 
     <div>
 
@@ -29,17 +27,18 @@
 
         </div>
 
-        <textarea rows="10" cols="30" id="UserInput" placeholder="> Enter the text (EN)" autofocus></textarea>
+        <textarea rows="15" cols="40" id="UserInput" placeholder="> Enter the text (EN)" autofocus></textarea>
         <div class="container">
-            <button class="btn-e btn-1" onclick="Encode_Text();">Encryption</button>
-            <button class="btn-e btn-2" onclick="Decode_Text();">Decoding</button>
+            <button class="btn-e btn-1" id="btnEncryption" onclick="Encode_Text();">Encryption</button>
+            <button class="btn-e btn-2" id="btnDecoding" onclick="Decode_Text();">Decoding</button>
         </div>
+
     </div>
     <br><br>
 
     <h3 id="Result"></h3>
 
-    <script src="./app.js"></script>
+    <script src="app.js"></script>
 
 </body>
 
