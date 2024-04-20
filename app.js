@@ -12,6 +12,7 @@ textArea.addEventListener('input', event => {
     event.data != null && (char.value += event.data)
 
     newValue = event.target.value
+    
     if (event.inputType === 'insertText') {
         testq = newValue
     }
