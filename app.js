@@ -7,30 +7,40 @@ let textEncryp
 let testq = ''
 let indexLast
 let indexStart
+///
+let numStart
+let numEnd
 
 textArea.addEventListener('input', event => {
     event.data != null && (char.value += event.data)
-
     let newValue = event.target.value
 
-    if (event.inputType === 'insertText') {
-        testq = newValue
-    }
+    if (event.inputType === 'insertText') testq = newValue
 
-    if (event.inputType === 'deleteContentBackward') {
+    if (event.inputType === 'deleteContentBackward' || event.inputType === 'deleteContentForward') {
+
+        for (let index = 0; index < testq.length; index++) {
+            if (testq.charAt(index) !== newValue[index]) {
+
+                let indexNumber = index - 1
+
+                for (let iMax = indexNumber; iMax < newValue.length; iMax++) newValue[iMax] === ' ' && (numStart = iMax)
+
+                for (let iMin = indexNumber; iMin >= 0; iMin--) {
+                    if (newValue[iMin] === ' ') numEnd = iMin
+                }
+
+                return true
+            }
+
+        }
+
+        console.log(numStart, numEnd);
 
         for (let index = 0; index < testq.length; index++) {
 
-            if (testq.charAt([index]) === ' ') {
-                indexStart = index
-            }
-
-            if (event.target.value.length === testq.search(' ')) {
-                console.log(testq.search(' '));
-                indexStart = 0
-            }
-
-            console.log(indexStart);
+            if (testq.charAt([index]) === ' ') indexStart = index
+            if (event.target.value.length === testq.search(' ')) indexStart = 0
 
             if (newValue[index] !== testq[index]) {
                 indexLast = index
@@ -40,6 +50,8 @@ textArea.addEventListener('input', event => {
 
         }
 
+     
+
     }
 
     if (event.data == ' ') {
@@ -48,7 +60,6 @@ textArea.addEventListener('input', event => {
         testq = ''
     }
 })
-
 
 //Box colors
 const caseFilterColor = (colorText, colorBack) => {
