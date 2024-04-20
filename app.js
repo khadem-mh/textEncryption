@@ -1,3 +1,5 @@
+const btnEncryption = document.querySelector('#btnEncryption')
+const btnDecoding = document.querySelector('#btnDecoding')
 
 let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
@@ -108,3 +110,6 @@ function Decode_Text() {
     result = document.getElementById("Result");
     result.innerHTML = MyDecode;
 }
+
+btnEncryption.addEventListener('click', Encode_Text)
+btnDecoding.addEventListener('click', Decode_Text)
