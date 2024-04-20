@@ -5,48 +5,49 @@ let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
 let textEncryp
 let testq = ''
-let newValue
-let indexMain
+let indexLast
+let indexStart
+let u
+
 
 textArea.addEventListener('input', event => {
     event.data != null && (char.value += event.data)
 
-    newValue = event.target.value
-    
+    let newValue = event.target.value
+
     if (event.inputType === 'insertText') {
         testq = newValue
     }
 
     if (event.inputType === 'deleteContentBackward') {
-        console.log(testq);
+
         for (let index = 0; index < testq.length; index++) {
-            
+
+            if (testq.charAt([index]) === ' ') {
+                indexStart = index
+            }
+
+            if (event.target.value.length === testq.search(' ')) {
+                console.log(testq.search(' '));
+                indexStart = 0
+            }
+
+            console.log(indexStart);
+
             if (newValue[index] !== testq[index]) {
-                indexMain = index
+                indexLast = index
+                char.value = textArea.value.slice(indexStart, indexLast)
                 return true
             }
-        }
-        console.log('new value => ', newValue);
-    }
-    
-    
-    if (event.data == null) {
-    
-        let textWord
-        textWord = textArea.value
 
-        let indexMax
-        for (let i = 0; i < textWord.length; i++) {
-            if (textWord.charAt(i) === ' ') {
-                indexMax = i
-            }
         }
-        console.log(indexMax, indexMain);
-        char.value = textArea.value.slice(indexMax, indexMain)
+
     }
+
     if (event.data == ' ') {
         char.value = ''
         char.value += event.data
+        testq = ''
     }
 })
 
