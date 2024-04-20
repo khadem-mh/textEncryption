@@ -22,13 +22,12 @@ textarea {
     height: 300px;
     background-color: black;
     color: skyblue;
-    box-shadow: 0px 0 60px skyblue inset, 0 0 40px black, 0 0 60px skyblue;
+    box-shadow: 0px 0 70px skyblue inset, 0 0 70px skyblue;
     padding: 25px 25px 0 25px;
-    border: 1px solid skyblue;
-    border-top: 0;
+    border: 0;
     resize: none;
     font-size: 1.1rem;
-    border-radius: 0px 1rem 1rem 1rem;
+    border-radius: 0px 1rem 1rem 0rem;
     transition: all 700ms;
 }
 
@@ -38,27 +37,27 @@ textarea:focus {
 }
 
 .btn-1 {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 1rem;
 }
 
 .btn-2 {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 1rem;
 }
 
 button {
-    padding: .5rem;
-    /*     width: 9rem; */
+    padding: 0 1.5rem;
+    height: 40px;
     background-color: black;
     cursor: pointer;
-    border: 1px solid skyblue;
-    box-shadow: 0 0 10px skyblue inset, 0 0 20px black;
-    transition: all .4s;
-    color: skyblue
+    border: 0;
+    transition: all 400ms;
+    color: skyblue;
+    box-shadow: 0 10px 20px skyblue inset;
 }
 
 button:hover {
     background-color: rgba(20, 20, 20, 1);
-    box-shadow: 0 0 10px skyblue inset, 0 0 20px black inset;
+    box-shadow: 0 0 20px gray;
     color: white
 }
 
@@ -66,15 +65,15 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: -.3rem;
 }
 
 .btn-color-box {
-    background-color: rgba(20, 20, 20, 1) !important;
+    background-color: black;
     width: 160px;
     height: 40px;
-    border-bottom: 0;
-    border-top-left-radius: 10px;
-    border: 1px solid skyblue;
+    border-top-left-radius: 1rem;
+    border: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -115,13 +114,12 @@ button:hover {
     width: 100px;
     height: 40px;
     padding: 0 1rem;
-    border-bottom: 0;
     border-top-right-radius: 10px;
     background-color: black;
-    border: 1px solid skyblue;
+    border: 0;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 input:focus {
