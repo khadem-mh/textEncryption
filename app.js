@@ -7,8 +7,6 @@ let textEncryp
 let testq = ''
 let indexLast
 let indexStart
-let u
-
 
 textArea.addEventListener('input', event => {
     event.data != null && (char.value += event.data)
