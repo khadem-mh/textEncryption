@@ -27,40 +27,37 @@ const caseFilterColor = (colorText, colorBack) => {
     document.querySelector('textarea').style.cssText = `
                     color: ${colorText};
                     border: 1px solid ${colorBack};
-                    box-shadow: 0 0 40px ${colorBack} inset, 0 0 20px black;
+                    border-top: 0;
+                    box-shadow: 0 0 60px ${colorBack} inset, 0 0 40px black, 0 0 60px ${colorBack};
                 `
     document.querySelectorAll('.btn-e')[0].style.cssText = `
                     color: ${colorText};
                     border: 1px solid ${colorBack};
-                    box-shadow: 0 0 10px ${colorBack} inset, 0 0 20px black;
                 `
     document.querySelectorAll('.btn-e')[1].style.cssText = `
                     color: ${colorText};
                     border: 1px solid ${colorBack};
-                    box-shadow: 0 0 10px ${colorBack} inset, 0 0 20px black;
                 `
     document.querySelector('.btn-color-box').style.cssText = `
                     color: ${colorText};
                     border: 1px solid ${colorBack};
-                    box-shadow: 0px -4px 10px ${colorBack} inset, 0 0 20px black;
                 `
     document.querySelector('.parent-capsLockBtn').style.cssText = `
                     color: ${colorText};
                     border: 1px solid ${colorBack};
-                    box-shadow: 0px -4px 10px ${colorBack} inset, 0 0 20px black;
                 `
     document.querySelector('.capsLockBtn').style.cssText = `
                     color: ${colorText};
                 `
 }
 
-const boxColor = (color) => {
+/* const boxColor = (color) => {
     sessionStorage.removeItem("boxColor");
     sessionStorage.setItem("boxColor", color);
-}
+} */
 
 document.querySelectorAll('.btn-color-box__bx').forEach(box => {
-    box.addEventListener('click', (event) => {
+    box.addEventListener('click', event => {
 
         switch (event.target.classList[1]) {
 
@@ -81,8 +78,8 @@ document.querySelectorAll('.btn-color-box__bx').forEach(box => {
                 break;
 
             case 'btn-color-box__4':
-                caseFilterColor('green', 'green')
-                boxColor('green')
+                caseFilterColor('rgb(0, 176, 0)', 'rgb(0, 176, 0)')
+                boxColor('rgb(0, 176, 0)')
                 break;
 
             default:
@@ -90,7 +87,7 @@ document.querySelectorAll('.btn-color-box__bx').forEach(box => {
         }
     })
 })
-caseFilterColor(sessionStorage.getItem("boxColor"), sessionStorage.getItem("boxColor"))
+/* caseFilterColor(sessionStorage.getItem("boxColor"), sessionStorage.getItem("boxColor")) */
 
 
 

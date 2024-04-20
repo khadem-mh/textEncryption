@@ -9,32 +9,32 @@ body {
     background-color: rgb(24, 26, 27);
 }
 
-/* برای نسخه های جدید مرورگرها */
 ::selection {
-    background-color: skyblue;
+    background-color: gray;
 }
 
-/* برای پشتیبانی در فایرفاکس نسخه های قدیمی */
 ::-moz-selection {
-    background-color: skyblue;
+    background-color: gray;
 }
 
 textarea {
-    padding: 25px 25px 0 25px;
-    transition: 1s;
-    color: skyblue;
+    width: 400px;
+    height: 300px;
     background-color: black;
-    resize: none;
+    color: skyblue;
+    box-shadow: 0px 0 60px skyblue inset, 0 0 40px black, 0 0 60px skyblue;
+    padding: 25px 25px 0 25px;
     border: 1px solid skyblue;
     border-top: 0;
-    /*border-top-left-radius: 10px;*/
+    resize: none;
+    font-size: 1.1rem;
     border-radius: 0px 1rem 1rem 1rem;
-    box-shadow: 0 0 40px skyblue inset, 0 0 20px black;
+    transition: all 700ms;
 }
 
 textarea:focus {
     outline: none;
-    background-color: rgba(20, 20, 20, 1)
+    background-color: rgba(20, 20, 20, 1);
 }
 
 .btn-1 {
@@ -47,7 +47,7 @@ textarea:focus {
 
 button {
     padding: .5rem;
-/*     width: 9rem; */
+    /*     width: 9rem; */
     background-color: black;
     cursor: pointer;
     border: 1px solid skyblue;
@@ -65,7 +65,7 @@ button:hover {
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .btn-color-box {
@@ -74,12 +74,10 @@ button:hover {
     height: 40px;
     border-bottom: 0;
     border-top-left-radius: 10px;
-    background-color: black;
     border: 1px solid skyblue;
-    box-shadow: 0px -4px 10px skyblue inset, 0 0 20px black;
     display: flex;
     align-items: center;
-    justify-content: space-evenly
+    justify-content: space-evenly;
 }
 
 .btn-color-box__bx {
@@ -121,7 +119,6 @@ button:hover {
     border-top-right-radius: 10px;
     background-color: black;
     border: 1px solid skyblue;
-    box-shadow: 0px -4px 10px skyblue inset, 0 0 20px black;
     display: flex;
     align-items: center;
     justify-content: center
