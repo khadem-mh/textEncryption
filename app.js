@@ -25,26 +25,26 @@ textArea.addEventListener('input', event => {
 
 const caseFilterColor = (colorText, colorBack) => {
     document.querySelector('textarea').style.cssText = `
-                    color: ${colorText};
-                    box-shadow: 0px 0 70px ${colorBack} inset, 0 0 70px ${colorBack};
-                `
-    document.querySelectorAll('.btn-e')[0].style.cssText = `
-                    color: ${colorText};
-                    box-shadow: 0 10px 20px ${colorBack} inset;
-                `
-    document.querySelectorAll('.btn-e')[1].style.cssText = `
-                    color: ${colorText};
-                    box-shadow: 0 10px 20px ${colorBack} inset;
-                `
+        color: ${colorText};
+        box-shadow: 0px 0 70px ${colorBack} inset, 0 0 70px ${colorBack};
+     `
+    document.querySelectorAll('.btn-e').forEach(btn => {
+        btn.style.cssText = `
+            color: ${colorText};
+            box-shadow: 0 0 10px ${colorBack} inset;
+        `
+    })
     document.querySelector('.btn-color-box').style.cssText = `
-                    color: ${colorText};
-                `
+        color: ${colorText};
+        box-shadow: 0 0 10px ${colorBack} inset;
+    `
     document.querySelector('.parent-capsLockBtn').style.cssText = `
-                    color: ${colorText};
-                `
+        color: ${colorText};
+        box-shadow: 0 0 10px ${colorBack} inset;
+    `
     document.querySelector('.capsLockBtn').style.cssText = `
-                    color: ${colorText};
-                `
+        color: ${colorText};
+    `
 }
 
 /* const boxColor = (color) => {
