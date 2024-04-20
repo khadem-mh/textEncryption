@@ -150,5 +150,5 @@ input:focus {
 #Result {
     color: white;
     text-shadow: 2px 2px 10px black;
-    font-family: iransans;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
