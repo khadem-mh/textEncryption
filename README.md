@@ -21,7 +21,7 @@
 
 ## View of the project
 
-<!--<img src="./public/FolderShowTemplateProject/vid.gif" width="350px"/>-->
+<img src="./Video/text.gif" width="420px"/>
 
 check this [URL](https://khadem-mh.github.io/changeBackgroundPage/) for visit this page
 
