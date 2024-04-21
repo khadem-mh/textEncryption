@@ -5,11 +5,8 @@ let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
 let textEncryp
 
-textArea.addEventListener('keydown', event => {
-     char.innerHTML = event.key
-})
+textArea.addEventListener('keydown', event => char.innerHTML = event.key)
 
-//Box colors
 const caseFilterColor = (colorText, colorBack) => {
     document.querySelector('textarea').style.cssText = `
         color: ${colorText};
@@ -29,9 +26,7 @@ const caseFilterColor = (colorText, colorBack) => {
         color: ${colorText};
         box-shadow: 0 0 10px ${colorBack} inset;
     `
-    document.querySelector('.capsLockBtn').style.cssText = `
-        color: ${colorText};
-    `
+    document.querySelector('.capsLockBtn').style.cssText = `color: ${colorText};`
 }
 
 const boxColor = (color) => {
@@ -47,7 +42,6 @@ document.querySelectorAll('.btn-color-box__bx').forEach(box => {
                 boxColor('brown')
                 break;
             }
-
             case 'btn-color-box__2':
                 caseFilterColor('rgb(255, 174, 0)', 'rgb(255, 174, 0)')
                 boxColor('rgb(255, 174, 0)')
