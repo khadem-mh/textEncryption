@@ -45,7 +45,7 @@ textarea:focus {
     border-bottom-right-radius: 1rem;
 }
 
-button {
+button:not(.capsLockBtn) {
     padding: 0 1.5rem;
     height: 40px;
     background-color: black;
@@ -56,7 +56,7 @@ button {
     box-shadow: 0 0 10px skyblue inset;
 }
 
-button:hover {
+button:hover:not(.capsLockBtn) {
     background-color: rgba(20, 20, 20, 1);
     box-shadow: 0 0 20px gray;
     color: white
@@ -114,7 +114,7 @@ button:hover {
 
 .parent-capsLockBtn {
     overflow: hidden;
-    width: 100px;
+    width: 120px;
     height: 45px;
     padding: 0 1rem;
     border-top-right-radius: 10px;
@@ -127,26 +127,12 @@ button:hover {
     transition: all 700ms;
 }
 
-input:focus {
-    outline: none;
-}
-
-.capsLockBtn {
-    background-color: transparent;
-    cursor: default;
-    width: inherit;
-    height: inherit;
+.capsLockBtn {    
     border: 0;
-    box-shadow: none;
-    transition: all .4s;
-    color: skyblue;
-    font-size: .8rem;
-}
-
-.capsLockBtn:hover {
     background-color: transparent;
-    box-shadow: none;
-    color: skyblue
+    color: skyblue;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 #Result {

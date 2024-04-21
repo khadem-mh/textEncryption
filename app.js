@@ -4,77 +4,9 @@ const btnDecoding = document.querySelector('#btnDecoding')
 let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
 let textEncryp
-let testq = ''
-let indexLast
-let indexStart
-///
-let numStart = null
-let numEnd = null
 
-textArea.addEventListener('input', event => {
-    event.data != null && (char.value += event.data)
-    let newValue = event.target.value
-
-    if (event.inputType === 'insertText') testq = newValue
-
-    if (event.inputType === 'deleteContentBackward' || event.inputType === 'deleteContentForward') {
-
-        for (let index = 0; index < testq.length; index++) {
-            if (testq.charAt(index) !== newValue[index]) {
-                let indexNumber = index - 1
-                for (let iMax = indexNumber; iMax < newValue.length; iMax++) {
-                    if (newValue[iMax] === ' ') {
-                        numEnd = iMax
-                        if (iMax) {
-                            for (let iMin = indexNumber; iMin >= 0; iMin--) {
-                                if (newValue[iMin] === ' ') {
-                                    numStart = iMin
-                                    char.value = newValue.slice(numStart, numEnd)
-                                    return false
-                                }
-                            }
-                        }
-                    } else {
-
-                        let arrPrevText = newValue.split('')
-                        let num = 0
-                        arrPrevText.forEach(text => {
-                            if (text == ' ') num++
-                        })
-                        if (num === 1 || num === 0) char.value = newValue
-
-
-                    }
-                }
-                return false
-            }
-
-        }
-
-        console.log(numStart, numEnd);
-
-        for (let index = 0; index < testq.length; index++) {
-
-            if (testq.charAt([index]) === ' ') indexStart = index
-            if (event.target.value.length === testq.search(' ')) indexStart = 0
-
-            if (newValue[index] !== testq[index]) {
-                indexLast = index
-                char.value = textArea.value.slice(indexStart, indexLast)
-                return true
-            }
-
-        }
-
-
-
-    }
-
-    if (event.data == ' ') {
-        char.value = ''
-        char.value += event.data
-        testq = ''
-    }
+textArea.addEventListener('keydown', event => {
+     char.innerHTML = event.key
 })
 
 //Box colors
