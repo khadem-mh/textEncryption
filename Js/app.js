@@ -1,11 +1,18 @@
 const btnEncryption = document.querySelector('#btnEncryption')
 const btnDecoding = document.querySelector('#btnDecoding')
+const result = document.getElementById("Result")
 
 let char = document.querySelector('#char');
 let textArea = document.querySelector('#UserInput');
 let textEncryp
 
-textArea.addEventListener('keydown', event => char.innerHTML = event.key)
+textArea.addEventListener('keyup', event => {
+    if (textArea.value.length === 0) {
+        char.innerHTML = ''
+        result.innerHTML = ''
+    } else
+        char.innerHTML = event.key
+})
 
 const caseFilterColor = (colorText, colorBack) => {
     document.querySelector('textarea').style.cssText = `
@@ -67,7 +74,6 @@ caseFilterColor(sessionStorage.getItem("boxColor"), sessionStorage.getItem("boxC
 
 const test = (isDecode = false) => {
     let myDecode, myEncode
-    let result = document.getElementById("Result")
     if (isDecode) {
         myEncode = window.btoa(document.getElementById("UserInput").value)
         textEncryp = myEncode
