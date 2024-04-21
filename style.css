@@ -124,6 +124,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px skyblue inset;
+    transition: all 700ms;
 }
 
 input:focus {
