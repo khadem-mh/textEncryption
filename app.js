@@ -8,8 +8,8 @@ let testq = ''
 let indexLast
 let indexStart
 ///
-let numStart
-let numEnd
+let numStart = null
+let numEnd = null
 
 textArea.addEventListener('input', event => {
     event.data != null && (char.value += event.data)
@@ -21,16 +21,32 @@ textArea.addEventListener('input', event => {
 
         for (let index = 0; index < testq.length; index++) {
             if (testq.charAt(index) !== newValue[index]) {
-
                 let indexNumber = index - 1
+                for (let iMax = indexNumber; iMax < newValue.length; iMax++) {
+                    if (newValue[iMax] === ' ') {
+                        numEnd = iMax
+                        if (iMax) {
+                            for (let iMin = indexNumber; iMin >= 0; iMin--) {
+                                if (newValue[iMin] === ' ') {
+                                    numStart = iMin
+                                    char.value = newValue.slice(numStart, numEnd)
+                                    return false
+                                }
+                            }
+                        }
+                    } else {
 
-                for (let iMax = indexNumber; iMax < newValue.length; iMax++) newValue[iMax] === ' ' && (numStart = iMax)
+                        let arrPrevText = newValue.split('')
+                        let num = 0
+                        arrPrevText.forEach(text => {
+                            if (text == ' ') num++
+                        })
+                        if (num === 1 || num === 0) char.value = newValue
 
-                for (let iMin = indexNumber; iMin >= 0; iMin--) {
-                    if (newValue[iMin] === ' ') numEnd = iMin
+
+                    }
                 }
-
-                return true
+                return false
             }
 
         }
@@ -50,7 +66,7 @@ textArea.addEventListener('input', event => {
 
         }
 
-     
+
 
     }
 
