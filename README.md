@@ -21,9 +21,9 @@
 
 ## View of the project
 
-<img src="./Video/text.gif" width="420px"/>
+<img src="./Video/text.gif" width="430px"/>
 
-check this [URL](https://khadem-mh.github.io/changeBackgroundPage/) for visit this page
+check this [URL](https://khadem-mh.github.io/textEncryption/) for visit this page
 
 ___
 >### Social Network
