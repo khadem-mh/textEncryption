@@ -3,7 +3,7 @@
 # <p align="center"> Hi there 👋 I'm Mohammad Hossein 👨‍💻 </p>
  <p align="center"> React Js expert and FrontEnd Developer from Iran.</p>
 
-## Descripton Mini-Project
+## Description Mini-Project
 - Convert text to encrypted letters and convert encrypted letters to readable letters.
 
 - Includes a color box that changes color, back-ground and text to desired color
